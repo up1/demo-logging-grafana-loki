@@ -1,0 +1,44 @@
+version: "3"
+services:
+  go:
+    build:
+      context: ./go
+      dockerfile: Dockerfile
+    
+  nodejs:
+    build:
+      context: ./nodejs
+      dockerfile: Dockerfile
+
+  loki:
+    image: grafana/loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - "./loki:/mnt/config"
+    command: -config.file=/mnt/config/loki-config.yaml
+  
+  promtail:
+    image: grafana/promtail
+    volumes:
+      - "./promtail:/mnt/config"
+      - "/var/lib/docker/containers:/var/lib/docker/containers"
+    command: -config.file=/mnt/config/promtail-config.yaml
+  
+  grafana:
+    image: grafana/grafana-oss:8.5.2
+    volumes:
+        - ./grafana/:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+  
+  alertmanager:
+    image: prom/alertmanager
+    container_name: alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+    volumes:
+      - ./alert/alertmanager.yml:/etc/alertmanager/config.yml
+    ports:
+      - 9093:9093
