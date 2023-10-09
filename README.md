@@ -46,6 +46,7 @@ See result in grafana
 ## Step 3 :: Run service with NodeJS
 * [Pino-loki](https://github.com/Julien-R44/pino-loki)
   * Run in thread (not main)
+* [JavaScript TraceId and SpanId injection into logs](https://help.sumologic.com/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/javascript/traceid-spanid-injection-into-logs/)
 ```
 $docker compose up -d nodejs --build
 
