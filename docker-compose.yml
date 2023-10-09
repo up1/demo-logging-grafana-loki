@@ -4,6 +4,8 @@ services:
     build:
       context: ./go
       dockerfile: Dockerfile
+    ports:
+      - 8080:8080
     
   nodejs:
     build:
