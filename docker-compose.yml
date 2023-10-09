@@ -9,6 +9,8 @@ services:
     build:
       context: ./nodejs
       dockerfile: Dockerfile
+    ports:
+      - 3002:3000
 
   loki:
     image: grafana/loki

@@ -1,5 +1,5 @@
 # Workshop Observability
-* Centralized log
+* Centralized log with Distributed tracing
   * Docker logging
     * Go
     * NodeJS
@@ -47,8 +47,14 @@ See result in grafana
 * [Pino-loki](https://github.com/Julien-R44/pino-loki)
   * Run in thread (not main)
 ```
-$docker compose up nodejs --build
+$docker compose up -d nodejs --build
+
+$docker compose ps
+$docker compose logs --follow
 ```
+
+Run with URL
+* http://localhost:3002/
 
 See result in grafana
 

@@ -11,6 +11,15 @@
   "dependencies": {
     "pino": "^8.15.6",
     "pino-loki": "^2.1.3",
-    "winston": "^3.11.0"
+    "winston": "^3.11.0",
+    "@opentelemetry/api": "^1.3.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.37.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.39.1",
+    "@opentelemetry/instrumentation": "^0.39.1",
+    "@opentelemetry/resources": "^1.13.0",
+    "@opentelemetry/sdk-node": "^0.39.1",
+    "@opentelemetry/semantic-conventions": "^1.13.0",
+    "@opentelemetry/tracing": "^0.24.0",
+    "express": "^4.18.2"
   }
 }
