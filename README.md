@@ -43,7 +43,16 @@ $docker compose up go --build
 
 See result in grafana
 
-## Step 3 :: Remove all resources
+## Step 3 :: Run service with NodeJS
+* [Pino-loki](https://github.com/Julien-R44/pino-loki)
+  * Run in thread (not main)
+```
+$docker compose up nodejs --build
+```
+
+See result in grafana
+
+## Step 4 :: Remove all resources
 ```
 $docker compose down
 ```
