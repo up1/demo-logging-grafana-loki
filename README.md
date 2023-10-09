@@ -38,8 +38,14 @@ Go to explore page :: http://localhost:3000/explore
 
 ## Step 2 :: Run service with go
 ```
-$docker compose up go --build
+$docker compose up -d go --build
+
+$docker compose ps
+$docker compose logs --follow
 ```
+
+Run with URL
+* http://localhost:8080/
 
 See result in grafana
 
